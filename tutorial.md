@@ -1,7 +1,7 @@
 ## HOW TO CREATE A RESTful API with Node, Express and MongoDB
 
 ### CONNECT TO THE DATABASE HOSTED ON MLAB
-Firstly, we need to install a mongodb driver - mongoose
+Firstly, we need to install a mongodb driver - **mongoose**
 
 ```bash
 npm install mongoose
@@ -50,7 +50,7 @@ Just incase you want to run the server on a differenet IP other than 127.0.0.1, 
 ```bash
 const PORT = 3000; // type: number
 const IP = '192.168.1.7' // type: string
-app.listen(PORT, 12, () => {
+app.listen(PORT, IP, () => {
     console.log(`Listening on port ${PORT}`);
 })
 ```
@@ -72,14 +72,14 @@ app.use('/posts', logPosts)
 
 
 ### ROUTES
-This is basically how to create a route with express
+
 ```bash
 app.get('/', (req, res) => {
     res.send("You have hit the home page")
 })
 ```
 
-However, there are more modular ways to go about the same procedure.
+There are more modular ways to go about the same procedure.
 Let's say, you have a lot of routes that are related to posts. Then a better way to create your routes is presented subsequently.
 
 - Create a file called posts, in a routes directory.
@@ -92,7 +92,7 @@ RESTfulApi/
 ```
 
 Now create all routes related to posts by using 
-express.Router()
+```express.Router()```
 
 ```bash
 const express = require('express')
@@ -165,7 +165,7 @@ router.post('/', (req, res) => {
 })
 ```
 
-Now console.logging(req.body) displays "undefined" because express inherently can't process data of the json type. To do this, we need a package called 'body-parser'.
+Now console.logging(req.body) displays "undefined" because express inherently can't process data of the json type. To do this, we need a package called **body-parser**.
 
 ```bash
 npm install body-parser
@@ -267,7 +267,7 @@ router.patch('/:postId', (req, res) => {
 
 
 
-### ENABLING CROSS DOMAIN COMMUNICATION
+### ENABLE CROSS DOMAIN COMMUNICATION
 ```bash
 npm install cors
 ```
