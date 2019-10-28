@@ -213,7 +213,7 @@ router.get('/', (req, res) => {
     })
 })
 
-or by usuing async/await syntax
+or by using async/await syntax
 
 router.get('/', async (req, res) => {
     try{
